@@ -78,13 +78,6 @@ function arrayExtractor(domElements, inc) {
     return values;
 }
 
-
-
-
-
-
-
-
 function arrayOfObjectsExtractor(document, inc) {
     let values = [];
     let domElements = getDomElts(document, inc.box);
