@@ -1,0 +1,91 @@
+{
+    "start": "https://www.9rayti.com/etablissements-publics",
+    "selector": ".content-wrapper > .col-sm-4",
+    "link": "a",
+    "att": "href",
+    "type": "next",
+    "includes": [{
+        "selector": ".content-wrapper > .col-sm-4 a",
+        "att": "textContent",
+        "key": "abbr",
+        "type": "fromATagByIndex"
+    }, {
+        "selector": ".big-title.page-title",
+        "att": "textContent",
+        "key": "abbr",
+        "type": "field"
+    }],
+    "next": {
+        "include": [{
+                "selector": ".headline-content > h2",
+                "key": "name",
+                "att": "textContent",
+                "type": "field"
+
+            }, {
+
+                "selector": ".col-md-6:nth-child(1) > a",
+                "key": "city",
+                "att": "textContent",
+                "type": "field"
+            },
+            {
+                "selector": ".list-unstyled > .col-md-6:nth-child(2)",
+                "key": "phone",
+                "att": "textContent",
+                "type": "field"
+            },
+            {
+                "selector": ".col-md-6:nth-child(4) > a",
+                "key": "site",
+                "att": "href",
+                "type": "field"
+            },
+            {
+                "selector": ".col-md-6:nth-child(5) > a",
+                "key": "secteur",
+                "att": "textContent",
+                "type": "field",
+                "cnd": [{
+                    "defined": true
+                }, {
+                    "value": {
+                        "action": "!=",
+                        "comparedTo": "privé"
+                    }
+                }]
+            },
+            {
+                "selector": ".list-unstyled > .col-md-6:nth-child(8)",
+                "key": "adress",
+                "att": "textContent",
+                "type": "field"
+            },
+            {
+                "selector": ".col-md-6:nth-child(7) > a",
+                "key": "type",
+                "att": "textContent",
+                "type": "field"
+            },
+            {
+                "type": "array",
+                "key": "formation",
+                "selector": "#accordion > div > div > h4 > a",
+                "att": "textContent"
+            }
+        ],
+        "type": "next",
+        "selector": "linkToNext",
+        "next": {
+            "type": "data",
+            "include": [{
+
+            }]
+        },
+        "start": "onRuntime"
+    },
+    "server": {
+        "route": "http://localhost:8000/api/scrapy/etabs",
+        "token": "passcode"
+    }
+}

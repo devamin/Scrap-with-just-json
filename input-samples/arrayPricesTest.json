@@ -1,0 +1,38 @@
+{
+    "start": "https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=t-shirt&_sacat=0",
+    "box": ".s-item__wrapper.clearfix",
+    "link": "a.s-item__link",
+    "att": "href",
+    "type": "end",
+    "includes": [{
+        "selector": ".s-item__price",
+        "att": "textContent",
+        "key": "price",
+        "type": "ARRAY"
+    }, {
+        "selector": ".srp-controls__count-heading",
+        "att": "textContent",
+        "key": "totalItems",
+        "type": "FIELD",
+        "filter": {
+            "type": "EQUAL",
+            "comparedTo": "10"
+        },
+        "constraint": "REQUIRED"
+
+    }, {
+        "type": "OBJECT",
+        "key": "first product",
+        "elements": [{
+            "key": "price",
+            "selector": ".s-item__price",
+            "att": "textContent",
+            "type": "FIELD"
+        }, {
+            "key": "title",
+            "selector": ".s-item__title",
+            "att": "textContent",
+            "type": "FIELD"
+        }]
+    }]
+}
