@@ -34,7 +34,3 @@ function integerMutate(value) {
 function emailMutate(value) {
 
 }
-
-function cleanFromATag(value) {
-
-}
