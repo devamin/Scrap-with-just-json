@@ -1,4 +1,4 @@
-4 years old project, I create to serve one of my needs, you can scrap any website by just providing the JSONQuery as showing in this example and you will get data back. **No longer maintained**
+4 years old project, I created this to serve one of my needs, you can scrap any website by just providing the JSONQuery as showing in this example and you will get data back. **No longer maintained**
 ```
 
 
